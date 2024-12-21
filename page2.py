@@ -22,7 +22,7 @@ def stream_data_success():
         time.sleep(0.1)
 
 def get_place_id(address):
-    api_key = "AIzaSyAVaW5hNZwTYtwJ8L1WdfgmpyGDhXw_-8M"
+    api_key = st.secrets['api_keys']['api_key_g'] 
     base_url= f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={api_key}'
      
     response = requests.get(base_url)
@@ -58,7 +58,7 @@ def get_place_photo(photo_reference, api_key):
 
 def api_call(place_id):
 # Define the base URL and parameters for the request
-    api_key = "AIzaSyAVaW5hNZwTYtwJ8L1WdfgmpyGDhXw_-8M" 
+    api_key = st.secrets['api_keys']['api_key_g']  
     base_url = f"https://maps.googleapis.com/maps/api/place/details/json?place_id={place_id}&key={api_key}"
     # Send a GET request to the API
     response = requests.get(base_url)
